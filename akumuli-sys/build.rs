@@ -1,10 +1,12 @@
 fn main() {
-    //println!("cargo:rustc-link-lib=static=apr-1.0");
-    //println!("cargo:rustc-link-search=native=/usr/include");
+    println!("cargo:rustc-link-lib=dylib=apr-1");
+    println!("cargo:rustc-link-lib=akumuli");
+    println!("rerun-if-changed=build.rs");
 
     let bindings = bindgen::Builder::default()
-        .header("akumuli/include/akumuli.h")
-        .clang_arg("-I/usr/include/apr-1.0")
+        .header("/usr/local/include/akumuli.h")
+        .clang_arg("-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/")
+        .clang_arg("-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/apr-1")
         .blacklist_type("i64")
         .blacklist_type("i32")
         .blacklist_type("i16")

@@ -9,3 +9,7 @@ edition = "2018"
 [dependencies]
 akumuli-sys = { path = "akumuli-sys"}
 log = "0.4"
+chrono = "*"
+
+[dev-dependencies]
+env_logger = "*"
