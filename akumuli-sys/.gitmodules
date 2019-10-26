@@ -1,0 +1,3 @@
+[submodule "akumuli"]
+	path = akumuli
+	url = https://github.com/akumuli/Akumuli
